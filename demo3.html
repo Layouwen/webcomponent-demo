@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo3</title>
+  </head>
+  <body>
+    <button id="btn_a">自定义事件a</button>
+    <button id="btn_b">自定义事件b</button>
+    <script type="module">
+      // 创建事件
+      const obj = new EventTarget()
+      // 添加事件
+      obj.addEventListener('a', () => alert('触发了事件a'))
+      obj.addEventListener('b', () => alert('触发了事件b'))
+      document.querySelector('#btn_a').onclick = () => {
+        obj.dispatchEvent(new CustomEvent('a'))
+      }
+      document.querySelector('#btn_b').onclick = () => {
+        obj.dispatchEvent(new CustomEvent('b'))
+      }
+    </script>
+  </body>
+</html>

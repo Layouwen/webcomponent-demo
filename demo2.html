@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo2</title>
+    <style>
+      /* 样式隔离，无法操作 MyCom 内部的样式 */
+      .my_com_main {
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <my-com class="my_com" cusAttr="我是自定义属性">
+      <span slot="middle">我是主要内容</span>
+      <h2 slot="bottom">我是底部</h2>
+      <div slot="head">我是头部插槽</div>
+    </my-com>
+    <script type="module" src="./demo2.js"></script>
+  </body>
+</html>

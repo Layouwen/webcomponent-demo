@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo4</title>
+  </head>
+  <body>
+    <message-box title="我是标题" content="我是内容" isShow="false"></message-box>
+    <button id="show">显示Dialog</button>
+    <script type="module">
+      import './demo4.js'
+      const messageEl = document.querySelector('message-box')
+      document.querySelector('#show').onclick = () => {
+        // 显示 message 组件
+        messageEl.open()
+      }
+
+      messageEl.addEventListener('success', () => {
+        alert('外部自定义事件触发确认')
+      })
+
+      messageEl.addEventListener('cancel', (a,b) => {
+        alert('外部自定义事件触发关闭')
+        console.log(b)
+      })
+    </script>
+  </body>
+</html>
